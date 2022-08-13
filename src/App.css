@@ -40,7 +40,29 @@
   color: #888;
 }
 
+.todoList{
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+}
 
 .completed-todo{
-  text-decoration: dotted;
+  text-decoration: line-through;
+  background-color: green;
+  color: grey;
+
+}
+
+.uncompleted-todo{
+  background-color: red;
+}
+
+
+
+.deleteButton{
+  padding: 2px;
+  font-size: small;
+  font-family: sans;
+  margin-bottom: 3px;
+  margin-left: 250px;
 }
