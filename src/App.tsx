@@ -1,45 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { Todos } from "./components/Todos";
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      content: "Walk the dog",
-      string: "8 am",
-      completed: true,
-    },
-    {
-      id: 2,
-      content: "Write some musi",
-      string: "6 pm",
-      completed: true,
-    },
-    {
-      id: 3,
-      content: "Go to the gym",
-      string: "8 pm",
-      completed: true,
-    },
-    {
-      id: 4,
-      content: "Finish side-project tasks",
-      string: "9pm",
-      completed: false,
-    },
-    {
-      id: 5,
-      content: "Edit the video",
-      string: "11 pm",
-      completed: false,
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   function deleteTodo(id: number) {
     const todosCopy = todos.filter((todo) => todo.id !== id);
     setTodos(todosCopy);
   }
+
+  useEffect(() => {
+    fetch("http://localhost:3000/todos")
+      .then((resp) => resp.json())
+      .then((todosFromServer) => setTodos(todosFromServer));
+  }, []);
 
   return (
     <div className="App">

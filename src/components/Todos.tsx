@@ -8,6 +8,13 @@ export function Todos({ todo, todos, setTodos, deleteTodo }) {
           const match = todosCopy.find((target) => target.id === todo.id);
 
           match.completed = !match.completed;
+          fetch(`http://localhost:3000/todos/${match.id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(match),
+          });
 
           setTodos(todosCopy);
         }}
