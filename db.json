@@ -2,27 +2,18 @@
   "todos": [
     {
       "id": 2,
-      "content": "Write some musi",
-      "time": "6 pm",
+      "content": "Write some music",
       "completed": true
-    },
-    {
-      "id": 3,
-      "content": "Go to the gym",
-      "time": "8 pm",
-      "completed": false
-    },
-    {
-      "id": 4,
-      "content": "Finish side-project tasks",
-      "time": "9pm",
-      "completed": false
     },
     {
       "id": 5,
       "content": "Edit the video",
-      "time": "11 pm",
       "completed": false
+    },
+    {
+      "content": "go buy food",
+      "completed": false,
+      "id": 6
     }
   ]
 }

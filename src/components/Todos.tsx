@@ -20,7 +20,6 @@ export function Todos({ todo, todos, setTodos }) {
         }}
       >
         <h3>{todo.content}</h3>
-        <h2>{todo.time}</h2>
       </span>
       <button
         className="deleteButton"

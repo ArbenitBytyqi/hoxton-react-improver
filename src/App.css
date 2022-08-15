@@ -66,3 +66,14 @@
   margin-bottom: 3px;
   margin-left: 250px;
 }
+
+.todo-input{width: 300px;
+height: 35px;}
+
+
+.add-btn{
+  padding: 1rem;
+  margin-left:15px;
+  border: 1px solid white;
+  
+}
