@@ -1,4 +1,4 @@
-export function Todos({ todo, todos, setTodos, deleteTodo }) {
+export function Todos({ todo, todos, setTodos }) {
   return (
     <li className={todo.completed ? "completed-todo" : "uncompleted-todo"}>
       <span
@@ -20,15 +20,24 @@ export function Todos({ todo, todos, setTodos, deleteTodo }) {
         }}
       >
         <h3>{todo.content}</h3>
-        <h2>{todo.string}</h2>
+        <h2>{todo.time}</h2>
       </span>
       <button
         className="deleteButton"
         onClick={() => {
-          deleteTodo(todo.id);
+          const todosCopy = structuredClone(todos);
+
+          const dele = todosCopy.find((dele) => dele.id === todo.id);
+
+          fetch(`http://localhost:3000/todos/${dele.id}`, {
+            method: "DELETE",
+          })
+            .then((resp) => resp.json())
+            .then(() => location.reload());
         }}
       >
-        Delete
+        {" "}
+        Delete{" "}
       </button>
     </li>
   );

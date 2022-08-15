@@ -5,11 +5,6 @@ import { Todos } from "./components/Todos";
 function App() {
   const [todos, setTodos] = useState([]);
 
-  function deleteTodo(id: number) {
-    const todosCopy = todos.filter((todo) => todo.id !== id);
-    setTodos(todosCopy);
-  }
-
   useEffect(() => {
     fetch("http://localhost:3000/todos")
       .then((resp) => resp.json())
@@ -24,12 +19,7 @@ function App() {
 
       <ul className="todoList">
         {todos.map((todo) => (
-          <Todos
-            todo={todo}
-            todos={todos}
-            setTodos={setTodos}
-            deleteTodo={deleteTodo}
-          />
+          <Todos todo={todo} todos={todos} setTodos={setTodos} />
         ))}
       </ul>
     </div>

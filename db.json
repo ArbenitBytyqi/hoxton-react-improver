@@ -1,33 +1,27 @@
 {
   "todos": [
     {
-      "id": 1,
-      "content": "Walk the dog",
-      "string": "8 am",
-      "completed": true
-    },
-    {
       "id": 2,
       "content": "Write some musi",
-      "string": "6 pm",
+      "time": "6 pm",
       "completed": true
     },
     {
       "id": 3,
       "content": "Go to the gym",
-      "string": "8 pm",
-      "completed": true
+      "time": "8 pm",
+      "completed": false
     },
     {
       "id": 4,
       "content": "Finish side-project tasks",
-      "string": "9pm",
+      "time": "9pm",
       "completed": false
     },
     {
       "id": 5,
       "content": "Edit the video",
-      "string": "11 pm",
+      "time": "11 pm",
       "completed": false
     }
   ]
